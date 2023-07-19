@@ -4,7 +4,7 @@
             <a href="/"><img src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg" alt="w_dev" id="logo"></a>
             <img id="menu-button" v-on:click="openMenu" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg" alt="abrir_menu">
             <div id="menu-overlay" v-if="menuActive"></div>
-            <div id="menu-itens" :class="{active:menuActive}">
+            <div id="menu-itens" :class="{active:menuActive}" v-on:click="closeMenu">
                 <img src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg" alt="w_dev" id="menu-logo">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -26,7 +26,7 @@ export default{
     },
     methods:{
         openMenu: function(){
-            this.menuActive = true;
+            this.menuActive = !this.menuActive;
 
         },
         closeMenu: function(){
@@ -83,8 +83,8 @@ nav{
     justify-content: flex-start;
     align-items: center;
 }
-#menu-itens:active{
-    display: flex;
+#menu-itens.active{
+    display: flex
 }
 ul{
     list-style: none;
