@@ -1,7 +1,8 @@
 import axios from "axios";
 
+
 const api = axios.create({
-    baseURL: 'https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/api'
+    baseURL: 'http://localhost:8080/apiTeste'
 })
 
 export default api;

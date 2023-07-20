@@ -3,14 +3,14 @@
 import './style/global.css';
 import Header from './components/Header.vue';
 import Home from './pages/Home.vue';
-import Footer from './components/Footer.vue';
+import Teste from './pages/Teste.vue';
 
 export default{
   name: 'App',
   components:{
     Header,
     Home,
-    Footer
+    Teste
   }
 }
 
@@ -19,7 +19,7 @@ export default{
 <template>
   <div >
     <Header/>
-    <Home/>
+    <Teste/>
     <Footer/>
   </div>
 
