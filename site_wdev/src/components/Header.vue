@@ -3,8 +3,8 @@
         <nav class="container">
             <a href="/"><img src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg" alt="w_dev" id="logo"></a>
             <img id="menu-button" v-on:click="openMenu" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg" alt="abrir_menu">
-            <div id="menu-overlay" v-if="menuActive"></div>
-            <div id="menu-itens" :class="{active:menuActive}" v-on:click="closeMenu">
+            <div id="menu-overlay" v-on:click="closeMenu" v-if="menuActive"></div>
+            <div id="menu-itens" :class="{active:menuActive}" >
                 <img src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg" alt="w_dev" id="menu-logo">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -50,6 +50,8 @@ header{
 nav{
     display: flex;
     justify-content: space-between;
+    height: 60px;
+    align-items: center;
 }
 #logo{
     width: 120px;
@@ -95,5 +97,28 @@ ul li{
 }
 ul li a{
     color: var(--color-text-light)
+}
+
+@media (min-width: 700px){
+    #menu-button,
+     #menu-logo, 
+     #menu-overlay{
+        display: none;
+    }
+    #menu-itens{
+        display: flex;
+        position: static;
+        height: 60px;
+        width: auto;
+    }
+    ul{
+        display: flex;
+        height: 60px;
+        align-items: center;
+    }
+    ul li{
+        margin: 0;
+        margin-left: 20px;
+    }
 }
 </style>
