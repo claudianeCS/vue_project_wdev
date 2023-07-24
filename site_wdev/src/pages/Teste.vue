@@ -6,9 +6,13 @@
             {{ produto.nome }} - {{ produto.preco }} - {{ produto.quantidade }}
             </li>
         </ul>
-        <div v-else>
+        <div v-else> 
             Nenhum produto encontrado.
         </div>
+
+        <form action="post">
+          
+        </form>
     </div>
     </main>
    
